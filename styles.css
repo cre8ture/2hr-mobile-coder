@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+    padding-right: 20px;
+}
+
+
+
+/* CODE EDITORS */
+
+#textareas {
+    display: flex;
+    margin: 5px;
+}
+
+.resizable {
+    flex: 2 1 0;
+    margin: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    border-left: 10px solid #ccc; /* adjust as needed */
+        position: relative;
+        /* other styles... */
+    }
+
+    /* Default styles */
+.resizable {
+    display: flex;
+    flex-direction: column;
+}
+
+.resizable label {
+    order: -1; /* Make the label appear above the textarea */
+}
+
+/* textarea { */
+    
+
+/* Styles for screens smaller than 800px */
+/* @media (max-width: 800px) {
+    #textareas {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .resizable {
+        height: auto; 
+    }
+
+    .resizable:not(:first-child) textarea {
+        display: none;
+    }
+} */
+
+/* Styles for screens smaller than 800px */
+/* Styles for screens smaller than 800px */
+@media (max-width: 800px) {
+    #textareas {
+        position: relative;
+    }
+
+    .resizable:not(#codeAI) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: auto; /* Reset the height */
+    }
+
+    .resizable:not(#codeAI):nth-child(1) {
+        left: 0;
+    }
+
+    .resizable:not(#codeAI):nth-child(2) {
+        left: 30px; /* adjust as needed */
+    }
+
+    .resizable:not(#codeAI):nth-child(3) {
+        left: 60px; /* adjust as needed */
+    }
+
+    /* Add more selectors if you have more than three .resizable elements */
+
+    .resizable:not(.active) textarea {
+        /* display: none; Hide the textarea */
+    }
+}
+
+/* Styles for the active textarea */
+.resizable.active textarea {
+    display: block !important; /* Show the textarea */
+}
+    
+    .resizer {
+        width: 10px;
+        height: 10px;
+        background: red;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        cursor: se-resize;
+    }
+
+.resizable label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background: white;
+    padding: 2px;
+    /* border-left: 10px solid #ccc; adjust as needed */
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    padding: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+#textareas {
+    height: 60%; /* adjust as needed */
+    width: 100%;
+}
+
+#textareas .resizable {
+    height: 100%;
+}
+
+#textareas .resizable textarea {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+label{
+    background-color: transparent;
+}
+
+
+#code-output {
+    flex-grow: 1;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+#error-message {
+    height: 50px;
+    overflow-y: auto;
+    color: red;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+
+
+/* MIDDLE  */
+/* new window for ai */
+#main {
+    display: flex;
+    max-height: 300px;
+}
+#codeAI {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px; /* adjust as needed */
+}
+
+#send-button {
+    background: white;
+    border-radius: 5px; /* Adjust for rounded corners */
+    border: 1px solid black; /* Thin black outline */
+    box-shadow: 0 0 10px gray; /* Thick grey shadow */
+    padding: 10px;
+    margin-left: 10px;
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#send-button:active {
+    box-shadow: 0 0 5px; /* Adjust for a different shadow when active */
+    transform: translateY(4px);
+}
+
+#send-button:before {
+    content: "⬆"; /* Up arrow */
+    color: black; /* Adjust as needed */
+    font-size: 20px; /* Adjust as needed */
+    line-height: 40px; /* Adjust as needed */
+}
+
+#code-output {
+    flex: 1;
+    /* other styles as needed */
+}
+
+#iframe {
+    height: 40%; /* adjust as needed */
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); /* adjust as needed */
+}
+
+/* CHAT */
+
+#chat-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-left: 30px;
+    overflow-y: auto;
+}
+
+#input-area {
+    display: flex;
+}
+
+#chat-input {
+    flex-grow: 1;
+    border-radius: 20px;
+    border: 1px solid #ccc; /* add a border if needed */
+}
+
+#codeAI {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px; /* adjust as needed */
+}
+#bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#download-button {
+    background: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+}
+
+#download-button:active {
+    box-shadow: 0 0 5px;
+    transform: translateY(4px);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Prism.js and Redux via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.1/redux.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Simple Code Editor</title>
+</head>
+
+<body>
+    <div id="textareas">
+        <div class="resizable">
+            <label for="html-input">HTML</label>
+            <textarea id="html-input"></textarea>
+        </div>
+        <div class="resizable">
+            <label for="css-input">CSS</label>
+            <textarea id="css-input"></textarea>
+        </div>
+        <div class="resizable">
+            <label for="js-input">JavaScript</label>
+            <textarea id="js-input"></textarea>
+        </div>
+    </div>
+    <div id="main">
+        <div id="codeAI" class="resizable">
+            <label for="codeAI">Code.AI</label>
+            <div id="chat-area"></div>
+            <div id="input-area">
+                <input id="chat-input" type="text">
+                <button id="send-button"></button>
+            </div>
+        </div>
+        <iframe id="code-output"></iframe>
+    </div>
+    <div id="bottom-container">
+        <div id="error-message"></div>
+        <button id="download-button">Download HTML</button>
+    </div>
+</body>
+<script src="src/app.js"></script>
+<script src="src/resize.js"></script>
+<script src="src/chat.js"></script>
+<script src="src/download.js"></script>
+
+
+
+</html>
