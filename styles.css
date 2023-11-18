@@ -244,11 +244,23 @@ label{
     border: 1px solid #ccc; /* add a border if needed */
 }
 
+@media (max-width: 800px) {
+    #chat-input {
+        flex-grow: 1;
+        max-width: calc(100% - 50px); /* adjust as needed */
+    }
+
+    #send-button {
+        width: 40px; /* adjust as needed */
+    }
+}
+
 #codeAI {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 100px;
     padding: 10px; /* adjust as needed */
 }
 #bottom-container {
